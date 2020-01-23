@@ -1,4 +1,4 @@
-# Assignment 1: The Basics
+# Assignment 2: Loops, Arrays, and Functions
 
 ## 1. IDENTIFYING INFO
 - Full Name: Curren Taber
