@@ -20,3 +20,5 @@
 
 ## 4. REFERENCES
 - zyBooks: Introduction to C++
+- http://www.cplusplus.com/forum/beginner/174765/
+- https://www.geeksforgeeks.org/different-ways-to-initialize-all-members-of-an-array-to-the-same-value-in-c/
