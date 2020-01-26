@@ -94,4 +94,5 @@ void userInput()
 int main(int argc, char **argv)
 {
   userInput();
+  return 0;
 }
