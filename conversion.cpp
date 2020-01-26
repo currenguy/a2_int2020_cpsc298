@@ -1,6 +1,12 @@
 #include <iostream>
 using namespace std;
 
+/* This program demonstrates the functionality of four functions: makeLower(),
+ * lengthToCentimeters(), output(), and userInput(). When called, userInput()
+ * asks the user for a length in feet and inches, then outputs the
+ * equivalent length in meters and centimeters.
+ */
+
 //Converts a string to lowercase
 string makeLower(string s)
 {
@@ -30,20 +36,45 @@ double lengthToCentimeters(double feet, double inches)
   return lengthInCM;
 }
 
-//Uses centimeter value to output meters and centimeters
+//Uses centimeter input, then converts it and outputs meters and centimeters
 void output(double length)
 {
-  const double CENTIMETERS_PER_METER = 100.0;
-  double meters = length % CENTIMETERS_PER_METER;
-
+  const int CENTIMETERS_PER_METER = 100;
+  double meters = 0;
+  double centimeters = length;
+  while (centimeters > CENTIMETERS_PER_METER)
+  {
+    centimeters -= CENTIMETERS_PER_METER;
+    meters += 1;
+  }
+  cout << endl << "-----------------------------------" << endl << endl;
   cout << "Converted Length: ";
-  cout << meters << " Meters, ";
+
+  if (meters == 1)
+  {
+    cout << meters << " Meter, ";
+  }
+  else
+  {
+    cout << meters << " Meters, ";
+  }
+
+  if (centimeters == 1)
+  {
+    cout << centimeters << " Centimeter" << endl;
+  }
+  else
+  {
+    cout << centimeters << " Centimeters" << endl;
+  }
+  cout << endl << endl;
 }
 
+//Gets feet and inches from the user
 void userInput()
 {
   string input = "";
-  cout << "Type \"s\" to start, type \"quit\" to end: ";
+  cout << endl << "Type \"s\" to start, type \"quit\" to end: ";
   cin >> input;
   while (makeLower(input) != "quit")
   {
@@ -52,13 +83,14 @@ void userInput()
     cout << "Enter feet and inches separated by a space: ";
     cin >> userFeet;
     cin >> userInches;
-    cout << lengthToCentimeters(userFeet, userInches);
     output(lengthToCentimeters(userFeet, userInches));
-    cout << "Type \"s\" to start, type \"quit\" to end: ";
+    cout << endl << "Type \"s\" to start, type \"quit\" to end: ";
     cin >> input;
   }
+  cout << endl << "Goodbye!" << endl << endl;
 }
 
+//Implementation of functions
 int main(int argc, char **argv)
 {
   userInput();
