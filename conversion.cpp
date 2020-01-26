@@ -20,6 +20,7 @@ string makeLower(string s)
 //Converts feet and inches to centimeters
 double lengthToCentimeters(double feet, double inches)
 {
+  //Initialize variables
   const double METERS_PER_FOOT = 0.3048;
   const double CENTIMETERS_PER_METER = 100.0;
   const double INCHES_PER_FOOT = 12.0;
@@ -28,6 +29,7 @@ double lengthToCentimeters(double feet, double inches)
   double lengthInM = -1.0;
   double lengthInCM = -1.0;
 
+  //Conversion calculation to centimeters
   lengthInIN = (feet * INCHES_PER_FOOT) + inches;
   lengthInFT = lengthInIN / INCHES_PER_FOOT;
   lengthInM = lengthInFT * METERS_PER_FOOT;
@@ -51,22 +53,14 @@ void output(double length)
   cout << "Converted Length: ";
 
   if (meters == 1)
-  {
     cout << meters << " Meter, ";
-  }
   else
-  {
     cout << meters << " Meters, ";
-  }
 
   if (centimeters == 1)
-  {
     cout << centimeters << " Centimeter" << endl;
-  }
   else
-  {
     cout << centimeters << " Centimeters" << endl;
-  }
   cout << endl << endl;
 }
 
