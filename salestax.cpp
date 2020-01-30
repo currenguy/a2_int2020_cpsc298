@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ios>
+#include <iomanip>
 using namespace std;
 
 /* This program demonstrates a function addTax() that
@@ -22,7 +24,7 @@ int main(int argc, char **argv)
 
   //Output cost before tax
 
-  cout << endl;
+  cout << setprecision(2) << fixed << endl;
   cout << "Cost before tax: $" << itemCost << endl;
   cout << "Cost after tax: $ " << taxedItemCost << endl;
   cout << endl;
